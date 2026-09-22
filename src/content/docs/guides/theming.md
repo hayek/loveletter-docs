@@ -26,7 +26,7 @@ mountFeedbackWidget(el, {
 })
 ```
 
-The widget is plain DOM under a `.afb-widget` root with stable class names (`.afb-title`, `.afb-submit`, `.afb-status`, …) and a `--afb-accent` custom property, so you can also restyle it entirely from your own CSS.
+The widget is plain DOM under a `.ll-widget` root with stable class names (`.ll-title`, `.ll-submit`, `.ll-status`, …) and a `--ll-accent` custom property, so you can also restyle it entirely from your own CSS.
 
 ## Apple sheet
 

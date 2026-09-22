@@ -3,7 +3,7 @@ title: Security model
 description: Why the web SDK uses a relay, and when the direct-token escape hatch is safe.
 ---
 
-AppFeedback writes to GitHub, so the question is always: **where does the writable token live?** The answer differs by platform.
+Love Letter writes to GitHub, so the question is always: **where does the writable token live?** The answer differs by platform.
 
 ## Native apps (Apple, Android)
 
@@ -20,7 +20,7 @@ So on the web the default — and only production-safe — path is the [relay](.
 For internal tools, prototypes, or a site behind authentication where you control who loads the page, the web SDK offers a direct-to-GitHub transport — gated behind an explicit flag so it can't be used by accident:
 
 ```ts
-import { DirectGitHubTransport } from '@appfeedback/core'
+import { DirectGitHubTransport } from '@loveletter/core'
 
 const transport = new DirectGitHubTransport({
   owner: 'acme', repo: 'throwaway-feedback', token,

@@ -12,12 +12,12 @@ Every path below ends with a real, labelled GitHub issue in your repo. Pick your
 
 <Steps>
 
-1. Add the package (see [Installation](../installation/)), importing `AppFeedbackCore` (and `AppFeedbackUI` for the drop-in sheet).
+1. Add the package (see [Installation](../installation/)), importing `LoveLetterCore` (and `LoveLetterUI` for the drop-in sheet).
 
 2. Build a client once at app start:
 
    ```swift
-   import AppFeedbackCore
+   import LoveLetterCore
 
    let feedback = FeedbackClient(
      appName: "Acme",
@@ -36,7 +36,7 @@ Every path below ends with a real, labelled GitHub issue in your repo. Pick your
 4. Or present the drop-in SwiftUI sheet:
 
    ```swift
-   import AppFeedbackUI
+   import LoveLetterUI
 
    .sheet(isPresented: $showFeedback) {
      FeedbackSheet(client: feedback, theme: .default)
@@ -59,8 +59,8 @@ The web SDK never holds a GitHub token — it talks to a [relay](../relay/) you 
 2. Install and mount the widget:
 
    ```ts
-   import { mountFeedbackWidget } from '@appfeedback/widget'
-   import { RelayTransport } from '@appfeedback/core'
+   import { mountFeedbackWidget } from '@loveletter/widget'
+   import { RelayTransport } from '@loveletter/core'
 
    mountFeedbackWidget(document.getElementById('feedback')!, {
      transport: new RelayTransport({ endpoint: '/api/feedback' }),
@@ -72,7 +72,7 @@ The web SDK never holds a GitHub token — it talks to a [relay](../relay/) you 
 3. React app? Use the component instead:
 
    ```tsx
-   import { FeedbackForm } from '@appfeedback/react'
+   import { FeedbackForm } from '@loveletter/react'
 
    <FeedbackForm
      transport={new RelayTransport({ endpoint: '/api/feedback' })}
@@ -93,8 +93,8 @@ The web SDK never holds a GitHub token — it talks to a [relay](../relay/) you 
 2. Build a client once at app start — `androidFeedbackClient` fills the device-info block from `android.os.Build`:
 
    ```kotlin
-   import com.appfeedback.android.androidFeedbackClient
-   import com.appfeedback.core.*
+   import com.loveletter.android.androidFeedbackClient
+   import com.loveletter.core.*
 
    val client = androidFeedbackClient(
      transport = GitHubDirectTransport(owner = "acme", repo = "feedback", token = token),
@@ -114,7 +114,7 @@ The web SDK never holds a GitHub token — it talks to a [relay](../relay/) you 
 4. Or drop in the themeable Compose sheet:
 
    ```kotlin
-   import com.appfeedback.android.FeedbackSheet
+   import com.loveletter.android.FeedbackSheet
 
    FeedbackSheet(client = client, onSubmitted = { number -> /* dismiss, toast… */ })
    ```

@@ -7,14 +7,14 @@ import { Tabs, TabItem, Aside, Steps } from '@astrojs/starlight/components'
 
 A browser can't safely hold a writable GitHub token — anything shipped to the page is world-readable. So the web SDK POSTs feedback to a **relay you operate**: one small serverless function that holds the credential, does abuse control, and creates the issue. You host it; you hold the token.
 
-<Aside type="tip">`@appfeedback/relay` is framework-agnostic. The same `handleFeedback` runs behind a Cloudflare Worker, a Vercel/Netlify function, Firebase, Appwrite, or your own server.</Aside>
+<Aside type="tip">`@loveletter/relay` is framework-agnostic. The same `handleFeedback` runs behind a Cloudflare Worker, a Vercel/Netlify function, Firebase, Appwrite, or your own server.</Aside>
 
 ## What the relay does
 
 <Steps>
 1. **Verify** the submission (and an optional CAPTCHA token).
 2. **Throttle** — per-IP / global rate limits, dedupe, payload caps (you add what you need).
-3. **Format** the issue body via `@appfeedback/core` (identical to every platform).
+3. **Format** the issue body via `@loveletter/core` (identical to every platform).
 4. **Create** the GitHub issue with your server-held credential and return `{ issueNumber, issueUrl }`.
 </Steps>
 
@@ -26,7 +26,7 @@ A browser can't safely hold a writable GitHub token — anything shipped to the 
 `createFetchHandler` returns a standard `(Request) => Response` handler:
 
 ```ts
-import { createFetchHandler } from '@appfeedback/relay'
+import { createFetchHandler } from '@loveletter/relay'
 
 const handler = createFetchHandler({
   githubToken: env.GITHUB_TOKEN, // server-only secret
@@ -43,7 +43,7 @@ export default { fetch: handler } // Cloudflare Worker / Deno
 
 ```ts
 import { onRequest } from 'firebase-functions/v2/https'
-import { firebaseHandler } from '@appfeedback/relay'
+import { firebaseHandler } from '@loveletter/relay'
 
 export const feedback = onRequest(
   firebaseHandler({ githubToken: process.env.GITHUB_TOKEN!, owner: 'acme', repo: 'feedback' }),
@@ -54,7 +54,7 @@ export const feedback = onRequest(
 <TabItem label="Appwrite">
 
 ```ts
-import { appwriteHandler } from '@appfeedback/relay'
+import { appwriteHandler } from '@loveletter/relay'
 
 export default appwriteHandler({
   githubToken: process.env.GITHUB_TOKEN!,
@@ -69,7 +69,7 @@ export default appwriteHandler({
 Any stack can implement the [relay HTTP contract](#the-contract) directly, or call the core handler:
 
 ```ts
-import { handleFeedback } from '@appfeedback/relay'
+import { handleFeedback } from '@loveletter/relay'
 
 const result = await handleFeedback(requestBody, {
   githubToken, owner, repo,

@@ -1,25 +1,25 @@
 import { defineConfig } from 'astro/config'
 import starlight from '@astrojs/starlight'
 
-// Deployed as a GitHub Pages project site at https://hayek.github.io/appfeedback-docs.
+// Deployed as a GitHub Pages project site at https://hayek.github.io/loveletter-docs.
 export default defineConfig({
   site: 'https://hayek.github.io',
-  base: '/appfeedback-docs',
+  base: '/loveletter-docs',
   integrations: [
     starlight({
-      title: 'AppFeedback',
+      title: 'Love Letter',
       tagline: 'Feedback, straight to GitHub.',
       description: 'One feedback SDK for Apple, Android, and Web — every submission becomes a GitHub issue in one byte-exact format.',
       customCss: ['./src/styles/theme.css'],
       head: [
-        { tag: 'meta', attrs: { property: 'og:image', content: 'https://hayek.github.io/appfeedback-docs/og.png' } },
+        { tag: 'meta', attrs: { property: 'og:image', content: 'https://hayek.github.io/loveletter-docs/og.png' } },
         { tag: 'meta', attrs: { property: 'og:image:width', content: '1200' } },
         { tag: 'meta', attrs: { property: 'og:image:height', content: '630' } },
         { tag: 'meta', attrs: { name: 'twitter:card', content: 'summary_large_image' } },
-        { tag: 'meta', attrs: { name: 'twitter:image', content: 'https://hayek.github.io/appfeedback-docs/og.png' } },
+        { tag: 'meta', attrs: { name: 'twitter:image', content: 'https://hayek.github.io/loveletter-docs/og.png' } },
       ],
       social: [
-        { icon: 'github', label: 'GitHub', href: 'https://github.com/hayek?tab=repositories&q=appfeedback' },
+        { icon: 'github', label: 'GitHub', href: 'https://github.com/hayek?tab=repositories&q=loveletter' },
       ],
       sidebar: [
         {

@@ -1,5 +1,5 @@
 name: Bug report
-description: Report an error or problem in the AppFeedback documentation site.
+description: Report an error or problem in the Love Letter documentation site.
 labels: [bug]
 body:
   - type: markdown
@@ -21,7 +21,7 @@ body:
       label: Steps to reproduce
       description: The page URL and how to see the problem.
       placeholder: |
-        1. Go to https://hayek.github.io/appfeedback-docs/...
+        1. Go to https://hayek.github.io/loveletter-docs/...
         2. Follow the steps in section ...
         3. Observe ...
   - type: input

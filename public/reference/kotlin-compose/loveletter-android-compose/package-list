@@ -1,0 +1,17 @@
+$dokka.format:html-v1
+$dokka.linkExtension:html
+$dokka.location:com.loveletter.android////PointingToDeclaration/loveletter-android-compose/com.loveletter.android/index.html
+$dokka.location:com.loveletter.android//FeedbackSheet/#[Error type: Unresolved type for FeedbackClient]#[Error type: Unresolved type for Modifier]#[Error type: Unresolved type for FeedbackType]#kotlin.Function1[kotlin.Int,kotlin.Unit]#kotlin.Function1[kotlin.Throwable,kotlin.Unit]#kotlin.Function0[kotlin.Unit]/PointingToDeclaration/loveletter-android-compose/com.loveletter.android/-feedback-sheet.html
+$dokka.location:com.loveletter.android//androidFeedbackClient/#[Error type: Unresolved type for FeedbackTransport]#kotlin.String#kotlin.String#kotlin.String/PointingToDeclaration/loveletter-android-compose/com.loveletter.android/android-feedback-client.html
+$dokka.location:com.loveletter.android//currentDeviceInfo/#kotlin.String#kotlin.String#kotlin.String/PointingToDeclaration/loveletter-android-compose/com.loveletter.android/current-device-info.html
+$dokka.location:com.loveletter.android/FeedbackSheetState.Error///PointingToDeclaration/loveletter-android-compose/com.loveletter.android/-feedback-sheet-state/-error/index.html
+$dokka.location:com.loveletter.android/FeedbackSheetState.Error/Error/#kotlin.Throwable/PointingToDeclaration/loveletter-android-compose/com.loveletter.android/-feedback-sheet-state/-error/-error.html
+$dokka.location:com.loveletter.android/FeedbackSheetState.Error/cause/#/PointingToDeclaration/loveletter-android-compose/com.loveletter.android/-feedback-sheet-state/-error/cause.html
+$dokka.location:com.loveletter.android/FeedbackSheetState.Idle///PointingToDeclaration/loveletter-android-compose/com.loveletter.android/-feedback-sheet-state/-idle/index.html
+$dokka.location:com.loveletter.android/FeedbackSheetState.Invalid///PointingToDeclaration/loveletter-android-compose/com.loveletter.android/-feedback-sheet-state/-invalid/index.html
+$dokka.location:com.loveletter.android/FeedbackSheetState.Submitting///PointingToDeclaration/loveletter-android-compose/com.loveletter.android/-feedback-sheet-state/-submitting/index.html
+$dokka.location:com.loveletter.android/FeedbackSheetState.Success///PointingToDeclaration/loveletter-android-compose/com.loveletter.android/-feedback-sheet-state/-success/index.html
+$dokka.location:com.loveletter.android/FeedbackSheetState.Success/Success/#kotlin.Int/PointingToDeclaration/loveletter-android-compose/com.loveletter.android/-feedback-sheet-state/-success/-success.html
+$dokka.location:com.loveletter.android/FeedbackSheetState.Success/issueNumber/#/PointingToDeclaration/loveletter-android-compose/com.loveletter.android/-feedback-sheet-state/-success/issue-number.html
+$dokka.location:com.loveletter.android/FeedbackSheetState///PointingToDeclaration/loveletter-android-compose/com.loveletter.android/-feedback-sheet-state/index.html
+com.loveletter.android

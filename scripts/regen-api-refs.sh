@@ -2,7 +2,7 @@
 #
 # Regenerate the per-language API references that ship under
 # public/reference/{swift,kotlin,typescript}/ and are served at
-# https://hayek.github.io/appfeedback-docs/reference/<lang>/.
+# https://hayek.github.io/loveletter-docs/reference/<lang>/.
 #
 # The generated HTML is committed into this repo (rather than built in CI)
 # because each generator needs a different heavyweight toolchain — Swift/DocC,
@@ -11,7 +11,7 @@
 # public API changes, then commit the diff.
 #
 # Assumes the four repos are siblings:
-#   ../AppFeedbackSDK      ../appfeedback-android      ../appfeedback-web
+#   ../LoveLetterSDK      ../loveletter-android      ../loveletter-web
 #
 # Requirements (see each SDK repo for the pinned toolchain):
 #   - Swift:  Xcode toolchain with `swift` on PATH (swift-docc-plugin resolves itself)
@@ -21,28 +21,28 @@ set -euo pipefail
 
 DOCS_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 ROOT="$(cd "$DOCS_DIR/.." && pwd)"
-SWIFT_DIR="$ROOT/AppFeedbackSDK"
-ANDROID_DIR="$ROOT/appfeedback-android"
-WEB_DIR="$ROOT/appfeedback-web"
+SWIFT_DIR="$ROOT/LoveLetterSDK"
+ANDROID_DIR="$ROOT/loveletter-android"
+WEB_DIR="$ROOT/loveletter-web"
 OUT="$DOCS_DIR/public/reference"
 
 JDK21="${JAVA_HOME_21:-/opt/homebrew/opt/openjdk@21/libexec/openjdk.jdk/Contents/Home}"
 
-echo "==> Swift (DocC, combined AppFeedbackCore + AppFeedbackUI)"
+echo "==> Swift (DocC, combined LoveLetterCore + LoveLetterUI)"
 rm -rf "$OUT/swift"; mkdir -p "$OUT/swift"
-( cd "$SWIFT_DIR" && APPFEEDBACK_BUILD_DOCS=1 swift package --allow-writing-to-directory "$OUT/swift" \
+( cd "$SWIFT_DIR" && LOVELETTER_BUILD_DOCS=1 swift package --allow-writing-to-directory "$OUT/swift" \
     generate-documentation \
     --enable-experimental-combined-documentation \
-    --target AppFeedbackCore --target AppFeedbackUI \
+    --target LoveLetterCore --target LoveLetterUI \
     --transform-for-static-hosting \
-    --hosting-base-path appfeedback-docs/reference/swift \
+    --hosting-base-path loveletter-docs/reference/swift \
     --output-path "$OUT/swift" )
 # GitHub Pages serves only the site-root 404, so DocC's per-route index.html
 # files (it writes a real one at every route) are what make deep links resolve.
 # Keep DocC's own 404.html too as belt-and-suspenders.
 cp "$OUT/swift/index.html" "$OUT/swift/404.html"
 
-echo "==> Kotlin core (Dokka, com.appfeedback.core)"
+echo "==> Kotlin core (Dokka, com.loveletter.core)"
 rm -rf "$OUT/kotlin"; mkdir -p "$OUT/kotlin"
 ( cd "$ANDROID_DIR" && JAVA_HOME="$JDK21" ./gradlew :dokkaGeneratePublicationHtml --no-daemon )
 cp -R "$ANDROID_DIR/build/dokka/html/." "$OUT/kotlin/"
@@ -54,7 +54,7 @@ rm -rf "$OUT/kotlin-compose"; mkdir -p "$OUT/kotlin-compose"
     ./gradlew :android:dokkaGeneratePublicationHtml --no-daemon )
 cp -R "$ANDROID_DIR/android/build/dokka/html/." "$OUT/kotlin-compose/"
 
-echo "==> TypeScript (TypeDoc, all 4 @appfeedback/* packages)"
+echo "==> TypeScript (TypeDoc, all 4 @loveletter/* packages)"
 rm -rf "$OUT/typescript"; mkdir -p "$OUT/typescript"
 ( cd "$WEB_DIR" && corepack enable >/dev/null 2>&1 || true; pnpm install --frozen-lockfile; \
   pnpm exec typedoc --out "$OUT/typescript" )

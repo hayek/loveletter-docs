@@ -1,8 +1,8 @@
-# Contributing to AppFeedback (documentation)
+# Contributing to Love Letter (documentation)
 
-Thanks for helping improve AppFeedback! This repository is the documentation
+Thanks for helping improve Love Letter! This repository is the documentation
 site, built with Astro + Starlight and published to
-<https://hayek.github.io/appfeedback-docs/>. Typo fixes, clearer guides, and
+<https://hayek.github.io/loveletter-docs/>. Typo fixes, clearer guides, and
 new examples are all welcome.
 
 ## Prerequisites

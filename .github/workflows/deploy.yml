@@ -1,7 +1,7 @@
 name: Deploy docs to GitHub Pages
 
-# For a GitHub Pages *project* site (https://hayek.github.io/appfeedback-docs),
-# set `site: 'https://hayek.github.io'` and `base: '/appfeedback-docs'` in
+# For a GitHub Pages *project* site (https://hayek.github.io/loveletter-docs),
+# set `site: 'https://hayek.github.io'` and `base: '/loveletter-docs'` in
 # astro.config.mjs before enabling Pages. For a custom domain or user/org page,
 # leave `base` unset (the current default builds at root).
 

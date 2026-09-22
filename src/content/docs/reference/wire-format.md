@@ -1,9 +1,9 @@
 ---
 title: Wire format
-description: The exact GitHub issue shape every AppFeedback SDK produces and the inbox parses.
+description: The exact GitHub issue shape every Love Letter SDK produces and the inbox parses.
 ---
 
-Every platform emits the **same** issue — a title, a body, and labels. This is the contract between the SDKs (writers) and the AppFeedback inbox (reader), pinned by a [shared spec + golden-fixture conformance suite](https://github.com/hayek/appfeedback-spec) that runs in each SDK's CI.
+Every platform emits the **same** issue — a title, a body, and labels. This is the contract between the SDKs (writers) and the Love Letter inbox (reader), pinned by a [shared spec + golden-fixture conformance suite](https://github.com/hayek/loveletter-spec) that runs in each SDK's CI.
 
 ## Labels
 
@@ -54,4 +54,4 @@ These are exact, because three independent implementations must agree byte-for-b
 
 The parser is forgiving of hand-written / legacy bodies: it normalizes CRLF → LF, strips `**bold**` markers and stray whitespace/line-terminators, accepts an inline `**Contact Email:** you@example.com`, drops standalone `---` lines from the description, and infers a missing/empty attachment MIME from the URL (query strings stripped).
 
-The canonical, versioned definition — with the executable fixtures — lives in [`appfeedback-spec`](https://github.com/hayek/appfeedback-spec).
+The canonical, versioned definition — with the executable fixtures — lives in [`loveletter-spec`](https://github.com/hayek/loveletter-spec).

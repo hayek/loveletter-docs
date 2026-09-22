@@ -1,16 +1,16 @@
 ---
-title: AppFeedback
+title: Love Letter
 description: One feedback SDK for Apple, Android, and Web — every submission becomes a GitHub issue in one byte-exact format.
 template: splash
 hero:
   tagline: One feedback SDK for Apple, Android, and Web. Every report becomes a GitHub issue — in one byte-exact format, verified across platforms.
   actions:
     - text: Quickstart
-      link: /appfeedback-docs/guides/quickstart/
+      link: /loveletter-docs/guides/quickstart/
       icon: right-arrow
       variant: primary
     - text: GitHub
-      link: https://github.com/hayek/appfeedback-web
+      link: https://github.com/hayek/loveletter-web
       icon: external
       variant: minimal
 ---
@@ -31,8 +31,8 @@ import { Tabs, TabItem, Card, CardGrid } from '@astrojs/starlight/components'
   </TabItem>
   <TabItem label="TypeScript">
     ```ts
-    import { mountFeedbackWidget } from '@appfeedback/widget'
-    import { RelayTransport } from '@appfeedback/core'
+    import { mountFeedbackWidget } from '@loveletter/widget'
+    import { RelayTransport } from '@loveletter/core'
 
     mountFeedbackWidget(el, {
       transport: new RelayTransport({ endpoint: '/api/feedback' }),
@@ -51,7 +51,7 @@ import { Tabs, TabItem, Card, CardGrid } from '@astrojs/starlight/components'
   </TabItem>
 </Tabs>
 
-## Why AppFeedback
+## Why Love Letter
 
 <CardGrid>
   <Card title="One wire format" icon="list-format">
@@ -64,13 +64,13 @@ import { Tabs, TabItem, Card, CardGrid } from '@astrojs/starlight/components'
     A themeable feedback sheet on Apple and Android (Compose), plus a feedback widget + React component on the web — or go headless and submit from your own UI.
   </Card>
   <Card title="GitHub is the backend" icon="github">
-    No new service to run. Feedback lands as a labelled GitHub issue your team already triages; the AppFeedback inbox reads it straight back.
+    No new service to run. Feedback lands as a labelled GitHub issue your team already triages; the Love Letter inbox reads it straight back.
   </Card>
 </CardGrid>
 
 ## How the web relay works
 
-<div class="afb-flow">
+<div class="ll-flow">
   <div class="node"><b>Your app</b><span>collects feedback in the widget</span></div>
   <div class="arrow">→</div>
   <div class="node"><b>Your relay</b><span>holds the token, rate-limits, verifies CAPTCHA</span></div>
@@ -78,4 +78,4 @@ import { Tabs, TabItem, Card, CardGrid } from '@astrojs/starlight/components'
   <div class="node"><b>GitHub issue</b><span>created in your repo, returns the number</span></div>
 </div>
 
-Native apps (Apple, Android) can talk to GitHub directly with a Keychain-held token, or use the same relay. [See the security model →](/appfeedback-docs/guides/security/)
+Native apps (Apple, Android) can talk to GitHub directly with a Keychain-held token, or use the same relay. [See the security model →](/loveletter-docs/guides/security/)

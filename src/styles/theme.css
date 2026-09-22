@@ -1,4 +1,4 @@
-/* AppFeedback docs — "refined engineering / blueprint" theme.
+/* Love Letter docs — "refined engineering / blueprint" theme.
    Dark-first, warm-ink background, single amber accent, Fraunces display +
    Public Sans body + JetBrains Mono code. */
 
@@ -15,9 +15,9 @@
   --sl-color-accent: #e6a019;
   --sl-color-accent-high: #f7d28b;
 
-  --afb-amber: #e6a019;
-  --afb-amber-soft: #f7d28b;
-  --afb-hairline: color-mix(in oklab, var(--sl-color-gray-5) 70%, transparent);
+  --ll-amber: #e6a019;
+  --ll-amber-soft: #f7d28b;
+  --ll-hairline: color-mix(in oklab, var(--sl-color-gray-5) 70%, transparent);
 }
 
 /* Warm the dark ink slightly without disturbing Starlight's tuned grays. */
@@ -31,8 +31,8 @@
   --sl-color-accent-low: #ffedcc;
   --sl-color-accent: #a96a00;
   --sl-color-accent-high: #4a2f00;
-  --afb-amber: #b9760a;
-  --afb-amber-soft: #8a5800;
+  --ll-amber: #b9760a;
+  --ll-amber-soft: #8a5800;
   --sl-color-bg: #fbf8f1;
 }
 
@@ -54,7 +54,7 @@ site-title,
   position: relative;
   isolation: isolate;
   padding-block: clamp(2.5rem, 8vw, 6rem);
-  border-bottom: 1px solid var(--afb-hairline);
+  border-bottom: 1px solid var(--ll-hairline);
   overflow: clip;
 }
 .hero::before {
@@ -64,8 +64,8 @@ site-title,
   inset: 0;
   z-index: -2;
   background-image:
-    linear-gradient(to right, var(--afb-hairline) 1px, transparent 1px),
-    linear-gradient(to bottom, var(--afb-hairline) 1px, transparent 1px);
+    linear-gradient(to right, var(--ll-hairline) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--ll-hairline) 1px, transparent 1px);
   background-size: 44px 44px;
   mask-image: radial-gradient(ellipse 80% 70% at 50% 30%, #000 30%, transparent 78%);
   opacity: 0.5;
@@ -76,7 +76,7 @@ site-title,
   position: absolute;
   z-index: -1;
   inset: 0;
-  background: radial-gradient(60% 50% at 50% 12%, color-mix(in oklab, var(--afb-amber) 22%, transparent), transparent 70%);
+  background: radial-gradient(60% 50% at 50% 12%, color-mix(in oklab, var(--ll-amber) 22%, transparent), transparent 70%);
   pointer-events: none;
 }
 .hero h1 {
@@ -92,11 +92,11 @@ site-title,
 }
 /* staggered page-load reveal */
 .hero h1, .hero .tagline, .hero .sl-flex {
-  animation: afb-rise 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) backwards;
+  animation: ll-rise 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) backwards;
 }
 .hero .tagline { animation-delay: 0.08s; }
 .hero .sl-flex { animation-delay: 0.16s; }
-@keyframes afb-rise {
+@keyframes ll-rise {
   from { opacity: 0; transform: translateY(14px); }
   to { opacity: 1; transform: none; }
 }
@@ -106,20 +106,20 @@ site-title,
 
 /* Primary CTA gets the amber treatment */
 .hero a[data-variant='primary'] {
-  background: var(--afb-amber);
-  border-color: var(--afb-amber);
+  background: var(--ll-amber);
+  border-color: var(--ll-amber);
   color: #1a1300;
   font-weight: 600;
 }
 
 /* ---- Landing sections (the "splash" body) ---- */
-.sl-markdown-content :is(.afb-section-title) {
+.sl-markdown-content :is(.ll-section-title) {
   text-align: center;
   margin-top: 3.5rem;
 }
 /* Code tab groups on the landing: premium framing */
 .sl-markdown-content starlight-tabs {
-  border: 1px solid var(--afb-hairline);
+  border: 1px solid var(--ll-hairline);
   border-radius: 14px;
   overflow: clip;
   background: color-mix(in oklab, var(--sl-color-bg) 80%, #000);
@@ -129,19 +129,19 @@ site-title,
 
 /* Feature cards: hairline + hover lift */
 .sl-markdown-content .card {
-  border: 1px solid var(--afb-hairline);
+  border: 1px solid var(--ll-hairline);
   border-radius: 14px;
   background: color-mix(in oklab, var(--sl-color-bg) 86%, #000);
   transition: transform 0.18s ease, border-color 0.18s ease;
 }
 .sl-markdown-content .card:hover {
   transform: translateY(-3px);
-  border-color: color-mix(in oklab, var(--afb-amber) 55%, var(--afb-hairline));
+  border-color: color-mix(in oklab, var(--ll-amber) 55%, var(--ll-hairline));
 }
-.sl-markdown-content .card .icon { color: var(--afb-amber); }
+.sl-markdown-content .card .icon { color: var(--ll-amber); }
 
 /* ---- The app → relay → GitHub flow strip ---- */
-.afb-flow {
+.ll-flow {
   display: flex;
   flex-wrap: wrap;
   align-items: stretch;
@@ -149,24 +149,24 @@ site-title,
   margin: 2rem auto 0;
   max-width: 52rem;
 }
-.afb-flow .node {
+.ll-flow .node {
   flex: 1 1 0;
   min-width: 9rem;
-  border: 1px solid var(--afb-hairline);
+  border: 1px solid var(--ll-hairline);
   border-radius: 12px;
   padding: 1rem;
   text-align: center;
   background: color-mix(in oklab, var(--sl-color-bg) 86%, #000);
 }
-.afb-flow .node b { display: block; font-family: 'Fraunces Variable', serif; }
-.afb-flow .node span { font-size: 0.85rem; color: var(--sl-color-gray-3); }
-.afb-flow .arrow {
+.ll-flow .node b { display: block; font-family: 'Fraunces Variable', serif; }
+.ll-flow .node span { font-size: 0.85rem; color: var(--sl-color-gray-3); }
+.ll-flow .arrow {
   align-self: center;
-  color: var(--afb-amber);
+  color: var(--ll-amber);
   font-family: var(--sl-font-mono);
   font-size: 1.3rem;
 }
-@media (max-width: 38rem) { .afb-flow .arrow { transform: rotate(90deg); } }
+@media (max-width: 38rem) { .ll-flow .arrow { transform: rotate(90deg); } }
 
 /* Code blocks: a touch more breathing room */
-.sl-markdown-content :not(pre) > code { color: var(--afb-amber-soft); }
+.sl-markdown-content :not(pre) > code { color: var(--ll-amber-soft); }
