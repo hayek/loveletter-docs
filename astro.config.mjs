@@ -37,6 +37,7 @@ export default defineConfig({
             { label: 'The relay (Web)', link: '/guides/relay/' },
             { label: 'Security model', link: '/guides/security/' },
             { label: 'Theming & localization', link: '/guides/theming/' },
+            { label: 'Apple extras', link: '/guides/apple-extras/' },
           ],
         },
         {

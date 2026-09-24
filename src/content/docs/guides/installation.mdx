@@ -7,7 +7,7 @@ import { Tabs, TabItem, Aside } from '@astrojs/starlight/components'
 
 <Aside title="Release status">
 The code for all three platforms is public on GitHub. Formal registry releases are rolling out:
-- **Apple** — released: add the SwiftPM package at `from: "0.1.0"`.
+- **Apple** — released: add the SwiftPM package at `from: "0.9.0"`, the first release under the Love Letter name. (Earlier tags ship the old `AppFeedbackSDK` products.)
 - **Web** — `@loveletter/*` packages build and pass their suites; **npm publishing is in progress**. During early access, install from the [`loveletter-web`](https://github.com/hayek/loveletter-web) workspace.
 - **Android** — the shared core (transports + `FeedbackClient`) and the Compose UI module (`FeedbackSheet`) ship and are conformance-tested; **Maven Central publishing is in progress**. During early access, build from the [`loveletter-android`](https://github.com/hayek/loveletter-android) repo.
 </Aside>
@@ -18,7 +18,7 @@ The code for all three platforms is public on GitHub. Formal registry releases a
 **Swift Package Manager** — add to `Package.swift`:
 
 ```swift
-.package(url: "https://github.com/hayek/LoveLetterSDK", from: "0.1.0"),
+.package(url: "https://github.com/hayek/LoveLetterSDK", from: "0.9.0"),
 ```
 
 Then depend on the products you need:
@@ -48,7 +48,7 @@ npm i @loveletter/relay
 - `@loveletter/react` — `<FeedbackForm>` wrapper.
 - `@loveletter/relay` — the handler you deploy ([guide](../relay/)).
 
-ESM, dual-typed; React is a peer dependency (`>=18 <20`).
+ESM with TypeScript types; React is a peer dependency (`>=18 <20`).
 
 </TabItem>
 <TabItem label="Android (Kotlin)">

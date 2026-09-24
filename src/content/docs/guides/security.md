@@ -7,7 +7,7 @@ Love Letter writes to GitHub, so the question is always: **where does the writab
 
 ## Native apps (Apple, Android)
 
-A signed native binary is a black box. A GitHub token shipped inside it — held in the Keychain / secure storage and supplied by you — isn't trivially extractable by an ordinary user, so `GitHubDirectTransport` POSTing to the GitHub API directly is an acceptable trade-off (it's how the original SDK shipped). For higher volume or tighter blast-radius, point a custom transport at a relay instead.
+A signed native binary is a black box. A GitHub token shipped inside it — held in the Keychain / secure storage and supplied by you — isn't trivially extractable by an ordinary user, so `GitHubDirectTransport` POSTing to the GitHub API directly is an acceptable trade-off (it's how the original SDK shipped). For higher volume or a smaller blast radius, use `RelayTransport` (on both Apple and Android) with the same [relay](../relay/) the web uses. The token then never ships in the app.
 
 ## The web is different
 

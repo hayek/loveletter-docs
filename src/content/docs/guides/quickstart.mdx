@@ -45,7 +45,9 @@ Every path below ends with a real, labelled GitHub issue in your repo. Pick your
 
 </Steps>
 
-<Aside title="Where does the token live?">A `GitHubDirectTransport` token stays in the app's Keychain — acceptable for a signed native app. For higher volume, point a custom transport at a relay you control. See the [security model](../security/).</Aside>
+The sheet also handles attachments, and it can show the App Store rating prompt after pure praise. See [Apple extras](../apple-extras/).
+
+<Aside title="Where does the token live?">A `GitHubDirectTransport` token stays in the app's Keychain — acceptable for a signed native app. To keep the token off the device, use `RelayTransport(endpoint:)` with a [relay](../relay/) you control. See the [security model](../security/).</Aside>
 
 </TabItem>
 <TabItem label="Web (TypeScript)">
@@ -111,12 +113,16 @@ The web SDK never holds a GitHub token — it talks to a [relay](../relay/) you 
    )
    ```
 
-4. Or drop in the themeable Compose sheet:
+4. Or drop in the Compose sheet:
 
    ```kotlin
    import com.loveletter.android.FeedbackSheet
 
-   FeedbackSheet(client = client, onSubmitted = { number -> /* dismiss, toast… */ })
+   FeedbackSheet(
+     client = client,
+     onSubmitted = { number -> /* log the issue number */ },
+     onDone = { /* dismiss: the user tapped Done on the success screen */ },
+   )
    ```
 
 </Steps>

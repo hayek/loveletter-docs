@@ -38,6 +38,12 @@ export default { fetch: handler } // Cloudflare Worker / Deno
 // Vercel/Netlify: `export const POST = (req) => handler(req)`
 ```
 
+Is the widget served from a different origin than the relay? Pass `allowedOrigin` as the second argument. It takes `'*'`, one origin, or an array of origins, and turns on CORS headers and `OPTIONS` preflight:
+
+```ts
+createFetchHandler(config, { allowedOrigin: 'https://acme.com' })
+```
+
 </TabItem>
 <TabItem label="Firebase">
 
